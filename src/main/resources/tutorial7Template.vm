@@ -1,4 +1,3 @@
-#Template in VTL
 ##To
 ##$person.firstName $person.name
 ##$person.address.number $person.address.street
@@ -8,27 +7,4 @@
 ##
 ##I would like to invite you to a party this Saturday, 8PM at my place.
 ##
-##Cheers,
-##me
-
-#Template in HTML
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Invitation</title>
-</head>
-<body>
-<p>To</p>
-<p><strong>$!{person.firstName} $!{person.name}</strong><br>
-    $!{person.address.number} $!{person.address.street}<br>
-    $!{person.address.town}</p>
-
-<p>Dear #if($person.gender == "MALE") Mr. #else Ms. #end $!{person.firstName},</p>
-
-<p>I would like to invite you to a party this Saturday, 8PM at my place.</p>
-
-<p>Cheers, <br>me</p>
-<hr>
-</body>
-</html>
+##Cheers, me

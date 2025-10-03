@@ -25,10 +25,10 @@ public class PrintInvitations {
             velocityEngine.init();
 
             // 3.
-            Template template = velocityEngine.getTemplate("src/main/resources/invitation_template.vm");
+            Template template = velocityEngine.getTemplate("src/main/resources/tutorial7Template.vm");
 
             // 4.
-            FileWriter writer = new FileWriter("invitations.html");
+            FileWriter writerVTL = new FileWriter("invitations.txt");
 
             // 5.
             for (Person friend : friends) {
@@ -37,12 +37,12 @@ public class PrintInvitations {
                 StringWriter stringWriter = new StringWriter();
                 template.merge(context, stringWriter);
 
-                writer.write(stringWriter.toString());
-                writer.write("\n");
+                writerVTL.write(stringWriter.toString());
+                writerVTL.write("\n");
             }
 
-            writer.close();
-            System.out.println("HTML invitations generated successfully!");
+            writerVTL.close();
+            System.out.println("VTL invitations generated successfully!");
 
         } catch (Exception e) {
             e.printStackTrace();
